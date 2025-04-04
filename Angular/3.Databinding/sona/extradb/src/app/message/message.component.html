@@ -1,0 +1,18 @@
+<div class="container">
+    <p>{{msg}}</p>
+    <button type="button" (click)="changemsg()">Change Message</button>
+  
+    <p>Count: {{count}}</p>
+    <button type="button" (click)="increment()">Increment Count</button>
+    
+    <br><br>
+  
+    <input type="text" placeholder="Enter your name" [(ngModel)]="name">
+    <p>Name is: {{name}}</p>
+  
+    <br><br>
+  
+    <img [src]="imgurl" width="300px"><br>
+    <button type="button" (click)="changeimg()">Change Image</button>
+  </div>
+  

@@ -1,0 +1,24 @@
+<div class="container">
+    <span class="title">TASKS AND THEIR PRIORITIES</span><br><br>
+    
+    <div>
+        <input type="text" placeholder="Add new task" [(ngModel)]="newtask">
+        <select [(ngModel)]="newpriority"  >
+            <option value="High" >High</option>
+            <option value="Medium">Medium</option>     
+             <option value="Low">Low</option>
+        </select>&nbsp;
+        <button type="button" (click)="addnew()">ADD NEW</button>
+    </div> <br>
+
+
+    <div *ngFor="let list of todolist" [ngClass]="prioritylist(list.priority)">
+        <div class="box">
+            <div>Task Name:{{list.taskname}}<br>
+            Priority:{{list.priority}}</div>
+        </div>
+    </div>
+</div>
+
+
+

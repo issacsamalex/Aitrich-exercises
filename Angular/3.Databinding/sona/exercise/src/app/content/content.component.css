@@ -1,0 +1,100 @@
+.Suggestions {
+    font-weight: lighter;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.all {
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.list {
+    border-bottom: 2px solid #cccccc;
+}
+
+.list-row {
+    display: flex;
+    background-color: white;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.list-row > div {
+    text-align: left;
+    padding: 0 10px;
+}
+
+.id, .applicantrow:nth-child(2) {
+    width: 15%;
+}
+
+.date, .applicantrow:nth-child(3) {
+    width: 20%;
+}
+
+.company, .applicantrow:nth-child(4) {
+    width: 25%;
+}
+
+.type, .applicantrow:nth-child(5) {
+    width: 15%;
+}
+
+.position, .applicantrow:nth-child(6) {
+    width: 15%;
+}
+
+.contact, .applicantcontact {
+    width: 10%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.applicantcontact img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.status, .applicantstatus {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pending {
+    border: 1px solid #666666;
+    color: #666666;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.on-hold {
+    border: 1px solid #f87e32;
+    color: #f87e32;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.candidate {
+    background-color: #155724;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}

@@ -1,0 +1,57 @@
+
+<div class="">
+    <h4>Showing {{totalJobs}} Jobs Results
+    </h4>Suggestions<div class="suggestion-container" >
+ 
+        <div class="inline-div" [style.background-color]="black"
+        (click)="tempJobs">All</div>
+        <div class="inline-div" [style.background-color]="divBackgroundColor1" 
+        (mouseenter)="resetBackground()" (mouseleave)="setBackground()"  (click)="filter('pending')">Pending</div>
+        <div class="inline-div" [style.background-color]="divBackgroundColor1" 
+        (mouseenter)="resetBackground()" (mouseleave)="setBackground()"  (click)="filter('on-hold')">On-Hold</div>
+        <div class="inline-div" [style.background-color]="divBackgroundColor1" 
+        (mouseenter)="resetBackground()" (mouseleave)="setBackground()"   (click)="filter('Candidate')">Candidate</div> 
+        
+    </div>
+    
+
+</div>
+
+<div *ngIf="tempJobs.length > 0; else noJobsFound">
+    <div class="applicants-list">
+        <div class="applicant-row">
+          <div class="applicant-id "><h5>ID</h5></div>
+          <div class="applicant-date"><h5>Date Applied</h5></div>
+          <div class="applicant-company"><h5>Company</h5></div>
+          <div class="applicant-type"><h5>Type</h5></div>
+          <div class="applicant-position"><h5>Position</h5></div>
+          <div class="applicant-contact"><h5>Contact</h5></div>
+          <div class="applicant-status "><h5>Status</h5></div>
+        </div>
+       
+    </div>
+    <section class="applicants-list">
+        <div class="applicant-row" *ngFor="let list of tempJobs">
+            <input type="checkbox">
+          <div class="applicant-id">{{list.id}}</div>
+          <div class="applicant-date">{{list.dateApplied}}</div>
+          <div class="applicant-company">{{list.companyName}}</div>
+          <div class="applicant-type">{{list.type}}</div>
+          <div class="applicant-position">{{list.position}}</div>
+          <div class="applicant-contact"><img src="../../assets/images/phone.png"> 
+            <img src="../../assets/images/email (1) 1.png">            
+          </div>
+          <div class="applicant-status" >
+            <div [ngClass]="{'pending': list.status === 'pending',
+           'on-hold':list.status==='On-Hold',
+            'candidate':list.status==='Candidate'}">{{list.status}}</div>
+          </div>
+          
+        </div>
+      </section>
+    </div>
+
+
+<ng-template #noJobsFound>
+    <p>No jobs found.</p>
+</ng-template>
